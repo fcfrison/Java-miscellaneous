@@ -1,19 +1,23 @@
 package mysqlConnection;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 /**
- * The ideia here is to make a simple connector. 
+ * The ideia here is to make a simple Mysql connector. 
  */
 public class Connector {
+    // A bunch of properties related to the database.
     private final String dbManagSystem;
     private final String serverAdress;
     private String dbName = null;
     private final String port;
     private final String user;
     private final String password;
+
     /**
      * Connector constructor.
      * @param databaseManagSystem Name of db management system.
@@ -33,6 +37,7 @@ public class Connector {
             this.user = user;
             this.password = password;
             }
+
     /**
      * Connector constructor.
      * @param databaseManagSystem Name of db management system.
@@ -56,7 +61,7 @@ public class Connector {
             this.dbName = dbName;
             }
     /**
-     * Methods for url composition.
+     * Method for url composition.
      * @return A string with url.
      */
     private String urlConstruct(){
@@ -83,7 +88,4 @@ public class Connector {
                 throw new RuntimeException(e);
             }
         }
-
-    
-
 }

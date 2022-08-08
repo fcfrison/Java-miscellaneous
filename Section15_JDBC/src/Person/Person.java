@@ -1,4 +1,4 @@
-package Person;
+package person;
 /**
  * Considering that Java API Persistance won't be used in this section, 
  * the class Person will replace it.

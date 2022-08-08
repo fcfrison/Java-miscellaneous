@@ -22,7 +22,7 @@ public class Lecture312 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Type your name: ");
         String name = sc.nextLine();
-        String sql = "INSERT INTO person (name) VALUES (?)";//the '?' symbol is the parameters to be replaced.
+        String sql = "INSERT INTO person (name) VALUES (?)";//the '?' symbol indicates the parameters to be replaced.
         //One way to avoid a SQL injection attack is to use the method prepareStatement.
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, name); // we have just one parameter.
