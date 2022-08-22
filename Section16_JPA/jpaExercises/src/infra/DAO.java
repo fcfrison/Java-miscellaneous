@@ -64,6 +64,12 @@ public class DAO<E> {
     public List<E> queryAll(){
         return this.queryAll(10,5);
     }
+    /**
+     * This method queries all the data from a table. 
+     * @param limit The max number of rows queried on the database.
+     * @param offset 
+     * @return A list of instances of a specific class.
+     */
     public List<E> queryAll(int limit, int offset){
         if(limit<offset){
             throw new IllegalArgumentException("The limit must be gt the offset.");
@@ -76,6 +82,14 @@ public class DAO<E> {
         query.setMaxResults(limit); // set max ammount of row queried
         query.setFirstResult(offset); 
         return query.getResultList();//return the query via a list.
+    }
+    /**
+     * Method that search for an object considering an 'id'.
+     * @param id The 'id' value;
+     * @return The object that matches the specific id.
+     */
+    public E getById(Object id){
+        return this.em.find(this.class_, id);
     }
     public void closeDao(){
         em.close();

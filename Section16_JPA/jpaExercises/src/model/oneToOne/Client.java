@@ -1,5 +1,6 @@
 package model.oneToOne;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,9 @@ public class Client {
     private Long id;
     private String name;
 
-    @OneToOne // Creating a one-to-one relationship 
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST}) // Creating a one-to-one relationship.
+                        // The parameter 'cascade' makes possible to alter the Seat table without
+                        // explicitly ask the script to do so. 
     @JoinColumn(name="seat_id", unique = true) // 'seat' it's a foreignkey
     private Seat seat;
 
