@@ -7,6 +7,7 @@ public class App {
         pesos_1.add(5.0);
         pesos_1.add(6.0);
         pesos_1.add(7.0);
+        pesos_1.add(8.0);
         Passagem passagem1 = new Passagem("1234", "Michael", "15F",pesos_1.size(),
                                 pesos_1);
         
