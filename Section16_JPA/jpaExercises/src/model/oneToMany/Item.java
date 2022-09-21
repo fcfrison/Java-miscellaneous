@@ -3,6 +3,7 @@ package model.oneToMany;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,10 +24,12 @@ public class Item {
     @Column(nullable = false)
     private Double price;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST}) // one order has many items. Therefore, many items are related to one order.
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST},// one order has many items. Therefore, many items are related to one order.
+                fetch = FetchType.EAGER) 
     private Order order;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST}) // one product is related to many items.Therefore, many items are related to one product.
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST},// One product is related to many items.Therefore, many items are related to one product.
+                fetch = FetchType.EAGER) // By default, a many-to-one relationship is eager. 
     private Product product;
 
     public Item() {

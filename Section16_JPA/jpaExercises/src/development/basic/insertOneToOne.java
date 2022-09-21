@@ -1,6 +1,6 @@
 package development.basic;
 
-import infra.DAO;
+import db.DAO;
 import model.oneToOne.Client;
 import model.oneToOne.Seat;
 

@@ -1,6 +1,6 @@
 package development.basic;
 
-import infra.DAO;
+import db.DAO;
 import model.basic.Product;
 
 public class insertNewProduct {

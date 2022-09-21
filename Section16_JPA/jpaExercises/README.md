@@ -10,9 +10,9 @@ For simplicity purposes, i didn't use build tool like Maven.
 
 The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `src/infra` : the folder with infrastructure related classes
-- `src/model` : the folder with the db table related classes
-- `src/development/basic` : the folder with a lot of classes with main method
-- `lib`: the folder to maintain dependencies
-- `META-INF`: the folder with file `the persistence.xml`
+- `src`: folder with source codes
+- `src/infra` : folder with classes related to infrastructure; 
+- `src/model` : folder with classes related to the db tables; 
+- `src/development/basic` : folder with classes that implements the main method;
+- `lib`: folder with dependencies;
+- `META-INF`: folder with file `the persistence.xml`
